@@ -1,7 +1,7 @@
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import {  Response } from 'express'
+import { Request, Response } from 'express'
 import signout from './routes/userRoutes/user.routes'
 import newTask from './routes/todoRoutes/todo.routes'
 
@@ -31,7 +31,7 @@ app.use(newTask)
 
 
 
-app.get('/', ( res: Response)=>{
+app.get('/', ( req: Request, res: Response)=>{
     res.send(`The API is at http://localhost:${app.get('port')}` )
 })
 
